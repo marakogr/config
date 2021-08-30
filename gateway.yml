@@ -1,3 +1,8 @@
 server:
  port:
   8082
+zuul:
+  routes:
+    first-client:
+      path: /**
+      serviceId: first-client
