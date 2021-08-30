@@ -3,7 +3,7 @@ server:
 zuul:
   routes:
     first-client:
-      serviceId: first-client
+      serviceId: marakogr-client
 
 management:
   endpoints:
