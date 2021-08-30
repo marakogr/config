@@ -1,6 +1,5 @@
 server:
- port:
-  8082
+ port: 8082
 zuul:
   routes:
     first-client:
@@ -8,6 +7,7 @@ zuul:
       serviceId: first-client
 
 management:
+  port: 8083
   endpoints:
     web:
       exposure:
