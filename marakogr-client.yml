@@ -1,6 +1,10 @@
 test: hello
 server:
   port: 8085
+spring:
+  cloud:
+    config:
+      fail-fast: true
 management:
   endpoints:
     web:
