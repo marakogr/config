@@ -3,7 +3,6 @@ server:
 zuul:
   routes:
     first-client:
-      path: /confg/**
       serviceId: first-client
 
 management:
