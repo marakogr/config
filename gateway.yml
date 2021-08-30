@@ -6,3 +6,13 @@ zuul:
     first-client:
       path: /**
       serviceId: first-client
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  endpoint:
+    routes:
+      enabled: true
