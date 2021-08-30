@@ -2,7 +2,7 @@ server:
  port: 8082
 zuul:
   routes:
-    first-client:
+    marakogr-client:
       serviceId: marakogr-client
 
 management:
