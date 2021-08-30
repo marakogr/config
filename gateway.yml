@@ -3,11 +3,10 @@ server:
 zuul:
   routes:
     first-client:
-      path: /**
+      path: /confg/**
       serviceId: first-client
 
 management:
-  port: 8083
   endpoints:
     web:
       exposure:
