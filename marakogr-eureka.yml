@@ -13,19 +13,3 @@ spring:
   cloud:
     config:
       fail-fast: true
-
-#'docker' profile only
----
-
-#spring section
-spring:
-  profiles:
-    active: docker
-  application:
-    name: marakogr-eureka
-  cloud:
-    config:
-      discovery:
-        enabled: false
-      uri: http://${CONFIG_SERVER_HOST}:${CONFIG_SERVER_PORT}
-      fail-fast: true
