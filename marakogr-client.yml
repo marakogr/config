@@ -33,4 +33,4 @@ spring:
 eureka:
   client:
     service-url:
-      default-zone: http://${EUREKA_SERVER_HOST}:${EUREKA_SERVER_PORT}/eureka/
+      default-zone: http://${EUREKA_SERVER_HOST}:${EUREKA_SERVER_PORT}
