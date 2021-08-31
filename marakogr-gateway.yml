@@ -39,6 +39,8 @@ spring:
 
 eureka:
   client:
+  # this propery is used to avoid problems with feign client 
+  # see https://stackoverflow.com/questions/41401009/load-balancer-does-not-have-available-server-for-client
     fetch-registry: true
     service-url:
       defaultZone: http://${EUREKA_SERVER_HOST}:${EUREKA_SERVER_PORT}/eureka
