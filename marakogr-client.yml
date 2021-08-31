@@ -1,7 +1,9 @@
-test: hello
-server:
-  port: 8085
+
+#Git
+---
 spring:
+  profiles:
+    active: git
   cloud:
     config:
       fail-fast: true
@@ -11,3 +13,27 @@ management:
       exposure:
         include: health
       base-path: /actuator
+test: hello
+server:
+  port: 8085
+
+#Docker
+---
+spring:
+  profiles:
+    active: docker
+  cloud:
+    config:
+      discovery:
+        enabled: false
+      uri: http://${CONFIG_SERVER_HOST}:${CONFIG_SERVER_PORT}
+      fail-fast: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+      base-path: /actuator
+test: hello
+server:
+  port: 8085
