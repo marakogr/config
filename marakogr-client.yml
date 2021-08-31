@@ -1,39 +1,39 @@
+#Used for all profiles
 
-#Git
----
+#spring section
 spring:
-  profiles:
-    active: git
+
+#spring cloud
   cloud:
     config:
       fail-fast: true
+
+#actuator
 management:
   endpoints:
     web:
       exposure:
         include: health
       base-path: /actuator
-test: hello
-server:
-  port: 8085
 
-#Docker
+test: hello
+
+server.port: 8085
+
+
+#'docker' profile only
 ---
+#spring section
 spring:
   profiles:
     active: docker
+  application:
+    name: marakogr-client
+
+#spring cloud
   cloud:
     config:
-      discovery:
-        enabled: false
       uri: http://${CONFIG_SERVER_HOST}:${CONFIG_SERVER_PORT}
       fail-fast: true
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health
-      base-path: /actuator
-test: hello
-server:
-  port: 8085
+      discovery:
+        enabled: false
