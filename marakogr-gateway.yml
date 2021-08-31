@@ -26,21 +26,3 @@ spring:
       fail-fast: true
 
 server.port: 8082
-
-#'docker' profile only
----
-
-#spring section
-spring:
-  profiles:
-    active: docker
-  application:
-    name: marakogr-gateway
-
-#spring cloud
-  cloud:
-    config:
-      uri: http://${CONFIG_SERVER_HOST}:${CONFIG_SERVER_PORT}
-      fail-fast: true
-      discovery:
-        enabled: false
