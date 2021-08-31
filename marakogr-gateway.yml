@@ -1,9 +1,12 @@
-#Used for all profiles 
+#Used for all profiles
+
+#zuul section
 zuul:
   routes:
     marakogr-client:
       serviceId: marakogr-client
 
+#actuator section
 management:
   endpoints:
     web:
@@ -14,21 +17,27 @@ management:
     routes:
       enabled: true
 
+#spring section
 spring:
+
+#spring cloud
   cloud:
     config:
       fail-fast: true
 
-server:
-  port: 8082
+server.port: 8082
 
-#Docker
+#'docker' profile only
 ---
+
+#spring section
 spring:
   profiles:
     active: docker
   application:
     name: marakogr-gateway
+
+#spring cloud
   cloud:
     config:
       uri: http://${CONFIG_SERVER_HOST}:${CONFIG_SERVER_PORT}
