@@ -1,17 +1,32 @@
- #Docker
+#Used for all profiles
+
+#eureka section
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+#spring section
+spring:
+  
+#sprig cloud
+  cloud:
+    config:
+      fail-fast: true
+
+#'docker' profile only
 ---
+
+#spring section
 spring:
   profiles:
     active: docker
   application:
     name: marakogr-eureka
+#spring cloud
   cloud:
     config:
       discovery:
         enabled: false
       uri: http://${CONFIG_SERVER_HOST}:${CONFIG_SERVER_PORT}
       fail-fast: true
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
