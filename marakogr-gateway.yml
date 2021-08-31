@@ -1,53 +1,37 @@
-server:
-  port: 8082
+#Used for all profiles 
+zuul:
+  routes:
+    marakogr-client:
+      serviceId: marakogr-client
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  endpoint:
+    routes:
+      enabled: true
 
 spring:
   cloud:
     config:
       fail-fast: true
 
-zuul:
-  routes:
-    marakogr-client:
-      serviceId: marakogr-client
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-      base-path: /actuator
-  endpoint:
-    routes:
-      enabled: true
- 
- #Docker
- ---
-spring:
- profiles:
-   active: docker
- application:
-   name: marakogr-gateway
- cloud:
-   config:
-     discovery:
-       enabled: false
-     uri: http://${CONFIG_SERVER_HOST}:${CONFIG_SERVER_PORT}
-     fail-fast: true
 server:
- port: 8082
+  port: 8082
 
-zuul:
-  routes:
-    marakogr-client:
-      serviceId: marakogr-client
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-      base-path: /actuator
-  endpoint:
-    routes:
-      enabled: true
+#Docker
+---
+spring:
+  profiles:
+    active: docker
+  application:
+    name: marakogr-gateway
+  cloud:
+    config:
+      uri: http://${CONFIG_SERVER_HOST}:${CONFIG_SERVER_PORT}
+      fail-fast: true
+      discovery:
+        enabled: false
