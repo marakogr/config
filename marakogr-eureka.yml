@@ -13,3 +13,11 @@ spring:
   cloud:
     config:
       fail-fast: true
+
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+      base-path: /actuator
