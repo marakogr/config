@@ -26,3 +26,18 @@ spring:
       fail-fast: true
 
 server.port: 8082
+
+#'docker' profile only
+---
+
+#spring section
+spring:
+  profiles:
+    active: docker
+  application:
+    name: marakogr-client
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://${EUREKA_SERVER_HOST}:${EUREKA_SERVER_PORT}/eureka/
