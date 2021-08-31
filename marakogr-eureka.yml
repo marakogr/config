@@ -10,8 +10,6 @@ server.port: 8761
 
 #spring section
 spring:
-
-#sprig cloud
   cloud:
     config:
       fail-fast: true
@@ -25,7 +23,6 @@ spring:
     active: docker
   application:
     name: marakogr-eureka
-#spring cloud
   cloud:
     config:
       discovery:
