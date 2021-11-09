@@ -1,4 +1,7 @@
 #Used for all profiles
+kafka:
+  bootstrap-servers: cjm-kafka-1.netcracker.com:9092
+topic: cjm-o2uk-project-r3-4-mc-updates-sink
 
 #spring section
 spring:
