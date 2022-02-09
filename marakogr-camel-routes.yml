@@ -1,0 +1,22 @@
+camel:
+  threadpool:
+    default:
+      coreSize: 10
+      maximumSize: 25
+      maxQueueSize: 250
+hystrix:
+  group:
+    default:
+      circuitBreakerEnabled: true
+      errorThresholdPercentage: 50
+      circuitBreakerForceOpen: false
+      requestVolumeThreshold: 20
+      sleepWindow: 5000
+      corePoolSize: 10
+      executionTimeoutEnabled: true
+      executionTimeout: 3000
+      maximumSize: 10
+      maxQueueSize: -1
+      rollingStatisticalWindow: 10000
+      rollingStatisticalWindowBuckets: 10
+      queueSizeRejectionThreshold: 5
