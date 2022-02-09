@@ -6,6 +6,11 @@ camel:
       maximumSize: 25
       maxQueueSize: 250
 hystrix:
+  threadpool:
+    account:
+      coreSize: 100
+      maximumSize: 250
+      maxQueueSize: 15
   group:
     default:
       circuitBreakerEnabled: true
@@ -21,3 +26,33 @@ hystrix:
       rollingStatisticalWindow: 10000
       rollingStatisticalWindowBuckets: 10
       queueSizeRejectionThreshold: 5
+    account:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 15000
+      circuitBreaker:
+        enabled: true
+        forceOpen: false
+        forceClosed: false
+        requestVolumeThreshold: 20
+        errorThresholdPercentage: 50
+  command:
+    GetAccountById:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+        metrics:
+          rollingStats:
+            timeInMilliseconds: 15000
+      circuitBreaker:
+        enabled: true
+        forceOpen: false
+        forceClosed: false
+        requestVolumeThreshold: 20
+        errorThresholdPercentage: 50
+
